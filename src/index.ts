@@ -5,10 +5,14 @@ import makeFetchCookie from "fetch-cookie";
  * Playdate API client.
  */
 export default class PlaydateClient {
+	token:string;
+	loginToken?:string;
+	fetchCookie:string;
+	
   /**
    * @param {string} token The authentication token.
    */
-  constructor(token) {
+  constructor(token:string) {
 	this.token = token;
 	this.loginToken = null;
 	this.fetchCookie = makeFetchCookie(fetch);
